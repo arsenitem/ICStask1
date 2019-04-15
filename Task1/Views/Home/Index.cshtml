@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Найти студента";
+}
+<hr />
+@{
+    if (ViewBag.Alert == true)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.Error
+        </div>
+    }
+}
+<div id="SearchByCode">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <input type="text" name="Code" id="Code" class="form-control text-box single-line" style="float:left" />
+        <input type="submit" value="Найти" class="btn btn-default" style="margin-left:5px" />
+    }
+</div>
+
+<div id="results">
+    <p id="search_res">Результаты поиска:</p>
+
+    @ViewBag.result
+</div>
